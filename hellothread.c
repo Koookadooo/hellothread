@@ -15,6 +15,8 @@ int main() {
     int a = 1, b = 2;
     int status;
 
+    puts("Launching threads");
+
     // Creating thread 1
     status = pthread_create(&t1, NULL, hello_thread, &a);
     if (status != 0) {
@@ -38,6 +40,8 @@ int main() {
     if (status != 0) {
         perror("pthread_join");
     }
+
+    puts("Threads complete!");
 
     return 0;
 }
